@@ -1,0 +1,18 @@
+# Java
+target/
+*.class
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Environment Variables
+.env
+
+# Windows
+Thumbs.db
+
+# Mac
+.DS_Store
