@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <base id="pageBase">
+  <script>
+    document.getElementById("pageBase").href =
+      new URL(".", window.location.href).href;
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Modern Template — Monthly Highlights Poster</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="scrapbook.css" />
+</head>
+
+<body>
+
+  <div class="sb-stage">
+    <main class="sb-poster" id="sbPoster" role="img" aria-label="Monthly Highlights scrapbook poster">
+
+
+      <div class="sb-decor" aria-hidden="true">
+        <span class="sb-blob sb-blob--1"></span>
+        <span class="sb-blob sb-blob--2"></span>
+        <span class="sb-blob sb-blob--3"></span>
+
+        <span class="sb-dot sb-dot--blue" style="top:6%;left:9%"></span>
+        <span class="sb-dot sb-dot--red" style="top:15%;left:90%"></span>
+        <span class="sb-dot sb-dot--yellow" style="top:47%;left:5%"></span>
+        <span class="sb-dot sb-dot--green" style="top:60%;left:93%"></span>
+        <span class="sb-dot sb-dot--blue" style="top:80%;left:7%"></span>
+
+        <i class="fa-solid fa-star sb-star" style="top:11%;left:83%"></i>
+        <i class="fa-solid fa-star sb-star sb-star--sm" style="top:30%;left:4%"></i>
+        <i class="fa-solid fa-star sb-star sb-star--sm" style="top:70%;left:95%"></i>
+        <span class="sb-sparkle" style="top:5%;left:70%"></span>
+        <span class="sb-sparkle sb-sparkle--sm" style="top:55%;left:96%"></span>
+        <span class="sb-sparkle sb-sparkle--sm" style="top:88%;left:88%"></span>
+
+
+        <svg class="sb-arrow" viewBox="0 0 120 80" fill="none">
+          <path d="M8 12 C 40 4, 78 22, 96 58" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+          <path d="M96 58 L 80 52 M96 58 L 92 40" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+        </svg>
+      </div>
+
+
+      <header class="sb-header">
+        <span class="sb-gemini" aria-hidden="true"></span>
+        <h1 class="sb-title" data-sb="title">Monthly Highlights</h1>
+        <p class="sb-subtitle">
+          <span data-sb="org">Google Student Ambassador</span>
+          <span class="sb-subtitle__month" data-sb="month">June 2026</span>
+        </p>
+        <span class="sb-badge">
+          <i class="fa-solid fa-wand-magic-sparkles sb-badge__spark"></i>
+          <strong data-sb="badgeStrong">GSA</strong>
+          <span class="sb-badge__dot">&bull;</span>
+          <span data-sb="badgeText">Gemini Campus Representative</span>
+        </span>
+      </header>
+
+
+      <section class="sb-cards" id="sbCards" aria-label="Highlight cards"></section>
+
+
+      <section class="sb-midrow">
+
+        <div class="sb-sticky">
+          <span class="sb-sticky__tape" aria-hidden="true"></span>
+          <p class="sb-sticky__title" data-sb="noteTitle">This month&apos;s wins</p>
+          <ul class="sb-check" id="sbChecklist"></ul>
+        </div>
+
+
+        <figure class="sb-profile">
+          <span class="sb-profile__tape" aria-hidden="true"></span>
+          <img class="sb-profile__img" id="sbProfileImg" src="assets/profile.png" alt="Ambassador profile photo" />
+          <figcaption class="sb-profile__cap">
+            <span class="sb-profile__name" data-sb="name">Aarohi Sharma</span>
+            <span class="sb-profile__role" data-sb="role">Gemini Campus Representative</span>
+          </figcaption>
+        </figure>
+      </section>
+
+
+      <section class="sb-quote">
+        <span class="sb-quote__mark" aria-hidden="true">&ldquo;</span>
+        <p class="sb-quote__text" data-sb="quote">
+          Every idea starts small. With the right tools, it becomes something amazing.
+        </p>
+        <span class="sb-quote__signoff" data-sb="signoff">Let&apos;s Create Joy!</span>
+      </section>
+
+
+      <footer class="sb-footer">
+        <span class="sb-footer__gid">GID: <span data-sb="gid">9142</span></span>
+        <span class="sb-footer__handles" id="sbHandles"></span>
+        <span class="sb-footer__tags" id="sbTags"></span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="scrapbook.js"></script>
+</body>
+
+</html>

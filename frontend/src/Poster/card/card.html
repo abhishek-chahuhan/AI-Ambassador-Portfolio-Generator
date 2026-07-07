@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <base id="pageBase">
+  <script>
+    document.getElementById("pageBase").href =
+      new URL(".", window.location.href).href;
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Modern Template — Monthly Highlights Poster</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="card.css" />
+</head>
+
+<body class="cp-page">
+  <div class="cp-stage" aria-label="Poster preview stage">
+    <article class="cp-poster" id="cp-poster-root" role="img" aria-label="Monthly Highlights scrapbook poster">
+      <div class="cp-doodles" aria-hidden="true">
+        <i class="fa-solid fa-star cp-doodle cp-doodle--star1"></i>
+        <i class="fa-solid fa-star cp-doodle cp-doodle--star2"></i>
+        <i class="fa-regular fa-star cp-doodle cp-doodle--star3"></i>
+        <i class="fa-solid fa-heart cp-doodle cp-doodle--heart1"></i>
+        <i class="fa-solid fa-heart cp-doodle cp-doodle--heart2"></i>
+        <span class="cp-scribble cp-scribble--1"></span>
+        <span class="cp-scribble cp-scribble--2"></span>
+        <span class="cp-scribble cp-scribble--3"></span>
+        <span class="cp-sparkle cp-sparkle--1"></span>
+        <span class="cp-sparkle cp-sparkle--2"></span>
+      </div>
+
+      <header class="cp-header" role="banner">
+        <div class="cp-gemini" aria-label="Gemini">
+          <span class="cp-gemini__spark" aria-hidden="true"></span>
+        </div>
+
+        <div class="cp-brand" aria-label="Google Student Ambassador">
+          <span class="cp-brand__google">
+            <span class="cp-g cp-g--b">G</span><span class="cp-g cp-g--r">o</span><span
+              class="cp-g cp-g--y">o</span><span class="cp-g cp-g--b">g</span><span class="cp-g cp-g--g">l</span><span
+              class="cp-g cp-g--r">e</span>
+          </span>
+          <span class="cp-brand__sub" data-cp-field="brandSub">Student Ambassador</span>
+        </div>
+      </header>
+      <div class="cp-body">
+        <div class="cp-main">
+          <section class="cp-title" aria-labelledby="cp-heading">
+            <p class="cp-month" data-cp-field="month">June 2026</p>
+            <h1 class="cp-heading" id="cp-heading">
+              <span class="cp-heading__1" data-cp-field="titleTop">Monthly</span>
+              <span class="cp-heading__2" data-cp-field="titleBottom">Highlights</span>
+              <span class="cp-heading__underline" aria-hidden="true"></span>
+            </h1>
+            <p class="cp-subtitle" data-cp-field="subtitle" aria-label="Learning, Creating, Growing"></p>
+            <p class="cp-tagline" data-cp-field="tagline">
+              A month of exploration, creativity and meaningful connections.
+            </p>
+          </section>
+          <section class="cp-cards" id="cp-cards" aria-label="Monthly highlight cards"></section>
+        </div>
+        <aside class="cp-scrap" aria-label="Scrapbook highlights">
+          <figure class="cp-polaroid cp-polaroid--a">
+            <span class="cp-tape cp-tape--purple" aria-hidden="true"></span>
+            <img id="photo1" class="cp-polaroid__img" src="assets/photo1.png" alt="" />
+            <figcaption class="cp-polaroid__cap" id="photo1Caption"></figcaption>
+          </figure>
+
+          <div class="cp-music" aria-label="Music highlight">
+            <span class="cp-tape cp-tape--blue" aria-hidden="true"></span>
+            <div class="cp-music__head">
+              <span class="cp-music__app">
+                <span class="cp-music__spark" aria-hidden="true"></span>
+                <span id="musicApp">Gemini</span>
+              </span>
+              <i class="fa-regular fa-bookmark cp-music__save" aria-hidden="true"></i>
+            </div>
+            <h3 class="cp-music__title" id="musicTitle">Lyria</h3>
+            <p class="cp-music__sub" id="musicSub">Create music with a text prompt</p>
+            <p class="cp-music__desc" id="musicDesc"></p>
+            <div class="cp-music__player">
+              <i class="fa-solid fa-play cp-music__play" aria-hidden="true"></i>
+              <span class="cp-wave" aria-hidden="true"></span>
+              <span class="cp-music__time" id="musicTime">0:45</span>
+            </div>
+          </div>
+
+          <div class="cp-notebook" aria-label="Featured challenge">
+            <span class="cp-tape cp-tape--pink" aria-hidden="true"></span>
+            <span class="cp-notebook__spark" aria-hidden="true"></span>
+            <h3 class="cp-notebook__title" id="notebookTitle"></h3>
+            <p class="cp-notebook__sub" id="notebookSub"></p>
+            <span class="cp-notebook__heart" aria-hidden="true">
+              <i class="fa-solid fa-heart"></i>
+            </span>
+          </div>
+
+          <figure class="cp-polaroid cp-polaroid--b">
+            <span class="cp-tape cp-tape--pink" aria-hidden="true"></span>
+            <img id="photo2" class="cp-polaroid__img" src="assets/photo2.png" alt="" />
+          </figure>
+
+          <p class="cp-note" id="scrapNote"></p>
+        </aside>
+      </div>
+      <section class="cp-quote" aria-label="Closing quote">
+        <span class="cp-quote__mark" aria-hidden="true">&ldquo;</span>
+        <p class="cp-quote__text" id="quoteText"></p>
+        <span class="cp-quote__signoff" id="quoteSignoff"></span>
+      </section>
+      <footer class="cp-footer" role="contentinfo">
+        <span class="cp-footer__gid" id="footerGid">GID: 461</span>
+        <ul class="cp-footer__handles" id="footerHandles" aria-label="Social handles"></ul>
+        <ul class="cp-footer__tags" id="footerTags" aria-label="Hashtags"></ul>
+      </footer>
+    </article>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="card.js"></script>
+</body>
+
+</html>

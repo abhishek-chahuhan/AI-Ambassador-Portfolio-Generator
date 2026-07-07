@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Templates — AmbassadorAI Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="stylesheet" href="../css/templates.css" />
+</head>
+
+<body>
+  <header class="app-header" role="banner">
+
+    <div class="header-brand">
+      <div class="header-logo" aria-hidden="true">
+        <span class="logo-dot logo-dot--blue"></span>
+        <span class="logo-dot logo-dot--red"></span>
+        <span class="logo-dot logo-dot--yellow"></span>
+        <span class="logo-dot logo-dot--green"></span>
+      </div>
+      <span class="header-title">AmbassadorAI</span>
+      <span class="header-badge">Studio</span>
+    </div>
+
+    <nav class="header-nav" aria-label="Primary navigation">
+      <a class="nav-btn" href="generator.html" aria-label="Go to Generator">
+        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+        Generator
+      </a>
+      <button class="nav-btn nav-btn--active" aria-current="page" disabled>
+        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+        Templates
+      </button>
+    </nav>
+
+    <div class="header-actions">
+
+      <button id="downloadBtn" class="header-download-btn">
+        <i class="fa-solid fa-download"></i>
+        Download PNG
+      </button>
+
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+
+        <i class="fa-solid fa-moon"></i>
+
+      </button>
+
+    </div>
+
+  </header>
+
+  <main class="tpl-page" role="main">
+
+    <section class="tpl-hero" aria-labelledby="tpl-heading">
+      <p class="tpl-hero__eyebrow">Poster Collection</p>
+      <h1 class="tpl-hero__heading" id="tpl-heading">Choose a Poster Template</h1>
+      <p class="tpl-hero__sub">
+        Select the design you want to use for your generated monthly highlights poster.
+      </p>
+    </section>
+
+    <section class="tpl-carousel-shell" aria-label="Template carousel">
+
+      <button class="tpl-arrow tpl-arrow--prev" id="arrowPrev" aria-label="Scroll to previous templates"
+        title="Previous">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+
+      <div class="tpl-track-wrap" role="region" aria-label="Template cards" tabindex="0">
+        <div class="tpl-track" id="tplTrack" role="list">
+
+          <article class="tpl-card tpl-card--selected" role="listitem" data-template="classic" tabindex="0"
+            aria-pressed="true" aria-label="Classic template, currently selected">
+            <div class="tpl-card__preview-wrap">
+              <div class="template-preview">
+
+                <iframe id="classicPreview" src="../Poster/GooglePoster.html" loading="lazy" frameborder="0">
+                </iframe>
+
+              </div>
+            </div>
+            <div class="tpl-card__footer">
+              <div class="tpl-card__check" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="tpl-card__name">Classic</span>
+            </div>
+          </article>
+
+          <article class="tpl-card" role="listitem" data-template="dark" tabindex="0" aria-pressed="false"
+            aria-label="Dark template">
+            <div class="tpl-card__preview-wrap">
+              <div class="template-preview">
+
+                <iframe src="../Poster/dark/dark.html" loading="lazy" frameborder="0">
+                </iframe>
+
+              </div>
+            </div>
+            <div class="tpl-card__footer">
+              <div class="tpl-card__check" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="tpl-card__name">Dark</span>
+            </div>
+          </article>
+          <article class="tpl-card" role="listitem" data-template="scrapbook" tabindex="0" aria-pressed="false"
+            aria-label="Scrapbook template">
+            <div class="tpl-card__preview-wrap">
+              <div class="template-preview">
+
+                <iframe src="../Poster/scrapbook/scrapbook.html" loading="lazy" frameborder="0">
+                </iframe>
+
+              </div>
+            </div>
+            <div class="tpl-card__footer">
+              <div class="tpl-card__check" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="tpl-card__name">Scrapbook</span>
+            </div>
+          </article>
+          <article class="tpl-card" role="listitem" data-template="cards" tabindex="0" aria-pressed="false"
+            aria-label="Cards template">
+            <div class="tpl-card__preview-wrap">
+              <div class="template-preview">
+
+                <iframe src="../Poster/card/card.html" loading="lazy" frameborder="0">
+                </iframe>
+
+              </div>
+            </div>
+            <div class="tpl-card__footer">
+              <div class="tpl-card__check" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="tpl-card__name">Cards</span>
+            </div>
+          </article>
+        </div>
+      </div>
+      <button class="tpl-arrow tpl-arrow--next" id="arrowNext" aria-label="Scroll to next templates" title="Next">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="../js/templates.js"></script>
+</body>
+
+</html>

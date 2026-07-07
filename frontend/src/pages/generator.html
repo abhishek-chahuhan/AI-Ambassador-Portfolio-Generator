@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -29,30 +31,25 @@
     </div>
 
     <nav class="header-nav" aria-label="Primary navigation">
+
       <button class="nav-btn nav-btn--active" aria-current="page">
         <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
         Generator
       </button>
-      <button class="nav-btn">
+
+      <button class="nav-btn" onclick="window.location.href='templates.html'">
+
         <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
         Templates
+
       </button>
-      <button class="nav-btn">
-        <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
-        History
-      </button>
+
     </nav>
 
     <div class="header-actions">
       <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
         <i class="fa-solid fa-moon" aria-hidden="true"></i>
       </button>
-      <button class="icon-btn" aria-label="Notifications" title="Notifications">
-        <i class="fa-solid fa-bell" aria-hidden="true"></i>
-      </button>
-      <div class="header-avatar" aria-label="User menu" title="User menu" tabindex="0">
-        <span>JL</span>
-      </div>
     </div>
   </header>
 
@@ -76,7 +73,8 @@
           <i class="fa-solid fa-user" aria-hidden="true"></i>
           Profile Photo
         </h3>
-        <div class="photo-upload-zone" id="photoUploadZone" role="button" tabindex="0" aria-label="Upload profile photo">
+        <div class="photo-upload-zone" id="photoUploadZone" role="button" tabindex="0"
+          aria-label="Upload profile photo">
           <div class="photo-preview" id="photoPreview">
             <div class="photo-placeholder">
               <i class="fa-solid fa-image" aria-hidden="true"></i>
@@ -90,41 +88,18 @@
           </button>
         </div>
       </section>
-
-      <section class="sidebar-section" aria-labelledby="template-heading">
-        <h3 class="sidebar-section-title" id="template-heading">
-          <i class="fa-solid fa-palette" aria-hidden="true"></i>
-          Poster Template
-        </h3>
-        <div class="template-grid" role="radiogroup" aria-label="Select poster template">
-          <div class="template-thumb template-thumb--active" data-template="classic" role="radio" aria-checked="true" tabindex="0">
-            <div class="thumb-preview thumb-preview--classic"></div>
-            <span>Classic</span>
-          </div>
-          <div class="template-thumb" data-template="modern" role="radio" aria-checked="false" tabindex="0">
-            <div class="thumb-preview thumb-preview--modern"></div>
-            <span>Modern</span>
-          </div>
-          <div class="template-thumb" data-template="bold" role="radio" aria-checked="false" tabindex="0">
-            <div class="thumb-preview thumb-preview--bold"></div>
-            <span>Bold</span>
-          </div>
-          <div class="template-thumb" data-template="minimal" role="radio" aria-checked="false" tabindex="0">
-            <div class="thumb-preview thumb-preview--minimal"></div>
-            <span>Minimal</span>
-          </div>
-        </div>
-      </section>
-
       <section class="sidebar-section" aria-labelledby="theme-heading">
         <h3 class="sidebar-section-title" id="theme-heading">
           <i class="fa-solid fa-droplet" aria-hidden="true"></i>
           Accent Color
         </h3>
         <div class="accent-swatches" role="radiogroup" aria-label="Select accent color">
-          <button class="swatch swatch--blue swatch--active" data-color="blue" aria-label="Google Blue" aria-pressed="true"></button>
-          <button class="swatch swatch--green" data-color="green" aria-label="Google Green" aria-pressed="false"></button>
-          <button class="swatch swatch--yellow" data-color="yellow" aria-label="Google Yellow" aria-pressed="false"></button>
+          <button class="swatch swatch--blue swatch--active" data-color="blue" aria-label="Google Blue"
+            aria-pressed="true"></button>
+          <button class="swatch swatch--green" data-color="green" aria-label="Google Green"
+            aria-pressed="false"></button>
+          <button class="swatch swatch--yellow" data-color="yellow" aria-label="Google Yellow"
+            aria-pressed="false"></button>
           <button class="swatch swatch--red" data-color="red" aria-label="Google Red" aria-pressed="false"></button>
           <button class="swatch swatch--purple" data-color="purple" aria-label="Purple" aria-pressed="false"></button>
           <button class="swatch swatch--teal" data-color="teal" aria-label="Teal" aria-pressed="false"></button>
@@ -132,7 +107,7 @@
       </section>
 
       <section class="sidebar-section sidebar-section--cta">
-        
+
         <button class="btn btn--reset" id="resetBtn" aria-label="Reset form">
           <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
           Reset
@@ -177,15 +152,8 @@
               <i class="fa-solid fa-user" aria-hidden="true"></i>
               Full Name
             </label>
-            <input
-              class="field-input"
-              type="text"
-              id="ambassadorName"
-              name="ambassadorName"
-              placeholder="e.g. Jamie Liu"
-              autocomplete="name"
-              data-preview="previewName"
-            />
+            <input class="field-input" type="text" id="ambassadorName" name="ambassadorName"
+              placeholder="e.g. Jamie Liu" autocomplete="name" data-preview="previewName" />
           </div>
 
           <div class="field-group">
@@ -193,14 +161,8 @@
               <i class="fa-solid fa-id-card" aria-hidden="true"></i>
               Google ID (GID)
             </label>
-            <input
-              class="field-input"
-              type="text"
-              id="ambassadorGid"
-              name="ambassadorGid"
-              placeholder="e.g. gsac-2024-001"
-              data-preview="previewGid"
-            />
+            <input class="field-input" type="text" id="ambassadorGid" name="ambassadorGid"
+              placeholder="e.g. gsac-2024-001" data-preview="previewGid" />
           </div>
 
           <div class="field-group">
@@ -208,12 +170,21 @@
               <i class="fa-solid fa-calendar" aria-hidden="true"></i>
               Month
             </label>
-            <select class="field-input field-select" id="ambassadorMonth" name="ambassadorMonth" data-preview="previewMonth">
+            <select class="field-input field-select" id="ambassadorMonth" name="ambassadorMonth"
+              data-preview="previewMonth">
               <option value="">Select month…</option>
-              <option>January</option><option>February</option><option>March</option>
-              <option>April</option><option>May</option><option>June</option>
-              <option>July</option><option>August</option><option>September</option>
-              <option>October</option><option>November</option><option selected>December</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option selected>December</option>
             </select>
           </div>
 
@@ -222,14 +193,8 @@
               <i class="fa-solid fa-medal" aria-hidden="true"></i>
               Role / Chapter
             </label>
-            <input
-              class="field-input"
-              type="text"
-              id="ambassadorRole"
-              name="ambassadorRole"
-              placeholder="e.g. Core Team · GDSC Delhi"
-              data-preview="previewRole"
-            />
+            <input class="field-input" type="text" id="ambassadorRole" name="ambassadorRole"
+              placeholder="e.g. Core Team · GDSC Delhi" data-preview="previewRole" />
           </div>
         </div>
       </section>
@@ -253,7 +218,8 @@
                 <div class="highlight-icon highlight-icon--blue">
                   <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
                 </div>
-                <input class="highlight-checkbox" type="checkbox" id="hl-events" name="highlights" value="events" aria-label="Events Organized" />
+                <input class="highlight-checkbox" type="checkbox" id="hl-events" name="highlights" value="events"
+                  aria-label="Events Organized" />
                 <div class="highlight-checkmark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               </div>
               <span class="highlight-card-name">Events Organized</span>
@@ -262,19 +228,25 @@
               <div class="expand-inner">
                 <div class="field-group">
                   <label class="field-label" for="events-title">Title</label>
-                  <input class="field-input" type="text" id="events-title" placeholder="e.g. AI Workshop on Gemini APIs" data-preview-highlight="events-title" />
+                  <input class="field-input" type="text" id="events-title" placeholder="e.g. AI Workshop on Gemini APIs"
+                    data-preview-highlight="events-title" />
                 </div>
                 <div class="field-group">
-                  <label class="field-label" for="events-desc">Description <span class="field-counter" id="events-desc-count">0 / 280</span></label>
-                  <textarea class="field-textarea" id="events-desc" rows="3" maxlength="280" placeholder="Describe what happened, attendees, and impact…" data-counter="events-desc-count" data-preview-highlight="events-desc"></textarea>
+                  <label class="field-label" for="events-desc">Description <span class="field-counter"
+                      id="events-desc-count">0 / 280</span></label>
+                  <textarea class="field-textarea" id="events-desc" rows="3" maxlength="280"
+                    placeholder="Describe what happened, attendees, and impact…" data-counter="events-desc-count"
+                    data-preview-highlight="events-desc"></textarea>
                 </div>
                 <div class="field-row">
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="events-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link (optional)</label>
+                    <label class="field-label" for="events-link"><i class="fa-solid fa-link" aria-hidden="true"></i>
+                      Link (optional)</label>
                     <input class="field-input" type="url" id="events-link" placeholder="https://" />
                   </div>
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="events-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image (optional)</label>
+                    <label class="field-label" for="events-img"><i class="fa-solid fa-image" aria-hidden="true"></i>
+                      Image (optional)</label>
                     <input class="field-input field-file" type="file" id="events-img" accept="image/*" />
                   </div>
                 </div>
@@ -288,7 +260,8 @@
                 <div class="highlight-icon highlight-icon--green">
                   <i class="fa-solid fa-handshake" aria-hidden="true"></i>
                 </div>
-                <input class="highlight-checkbox" type="checkbox" id="hl-collab" name="highlights" value="collab" aria-label="Collaborations" />
+                <input class="highlight-checkbox" type="checkbox" id="hl-collab" name="highlights" value="collab"
+                  aria-label="Collaborations" />
                 <div class="highlight-checkmark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               </div>
               <span class="highlight-card-name">Collaborations</span>
@@ -297,19 +270,25 @@
               <div class="expand-inner">
                 <div class="field-group">
                   <label class="field-label" for="collab-title">Title</label>
-                  <input class="field-input" type="text" id="collab-title" placeholder="e.g. Cross-campus AI Hackathon" data-preview-highlight="collab-title" />
+                  <input class="field-input" type="text" id="collab-title" placeholder="e.g. Cross-campus AI Hackathon"
+                    data-preview-highlight="collab-title" />
                 </div>
                 <div class="field-group">
-                  <label class="field-label" for="collab-desc">Description <span class="field-counter" id="collab-desc-count">0 / 280</span></label>
-                  <textarea class="field-textarea" id="collab-desc" rows="3" maxlength="280" placeholder="Partners, outcomes, and your contribution…" data-counter="collab-desc-count" data-preview-highlight="collab-desc"></textarea>
+                  <label class="field-label" for="collab-desc">Description <span class="field-counter"
+                      id="collab-desc-count">0 / 280</span></label>
+                  <textarea class="field-textarea" id="collab-desc" rows="3" maxlength="280"
+                    placeholder="Partners, outcomes, and your contribution…" data-counter="collab-desc-count"
+                    data-preview-highlight="collab-desc"></textarea>
                 </div>
                 <div class="field-row">
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="collab-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link (optional)</label>
+                    <label class="field-label" for="collab-link"><i class="fa-solid fa-link" aria-hidden="true"></i>
+                      Link (optional)</label>
                     <input class="field-input" type="url" id="collab-link" placeholder="https://" />
                   </div>
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="collab-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image (optional)</label>
+                    <label class="field-label" for="collab-img"><i class="fa-solid fa-image" aria-hidden="true"></i>
+                      Image (optional)</label>
                     <input class="field-input field-file" type="file" id="collab-img" accept="image/*" />
                   </div>
                 </div>
@@ -323,7 +302,8 @@
                 <div class="highlight-icon highlight-icon--yellow">
                   <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
                 </div>
-                <input class="highlight-checkbox" type="checkbox" id="hl-challenge" name="highlights" value="challenge" aria-label="Challenge Overcome" />
+                <input class="highlight-checkbox" type="checkbox" id="hl-challenge" name="highlights" value="challenge"
+                  aria-label="Challenge Overcome" />
                 <div class="highlight-checkmark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               </div>
               <span class="highlight-card-name">Challenge Overcome</span>
@@ -332,19 +312,25 @@
               <div class="expand-inner">
                 <div class="field-group">
                   <label class="field-label" for="challenge-title">Title</label>
-                  <input class="field-input" type="text" id="challenge-title" placeholder="e.g. Pivoted event format last-minute" data-preview-highlight="challenge-title" />
+                  <input class="field-input" type="text" id="challenge-title"
+                    placeholder="e.g. Pivoted event format last-minute" data-preview-highlight="challenge-title" />
                 </div>
                 <div class="field-group">
-                  <label class="field-label" for="challenge-desc">Description <span class="field-counter" id="challenge-desc-count">0 / 280</span></label>
-                  <textarea class="field-textarea" id="challenge-desc" rows="3" maxlength="280" placeholder="What was the challenge and how did you overcome it?" data-counter="challenge-desc-count" data-preview-highlight="challenge-desc"></textarea>
+                  <label class="field-label" for="challenge-desc">Description <span class="field-counter"
+                      id="challenge-desc-count">0 / 280</span></label>
+                  <textarea class="field-textarea" id="challenge-desc" rows="3" maxlength="280"
+                    placeholder="What was the challenge and how did you overcome it?"
+                    data-counter="challenge-desc-count" data-preview-highlight="challenge-desc"></textarea>
                 </div>
                 <div class="field-row">
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="challenge-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link (optional)</label>
+                    <label class="field-label" for="challenge-link"><i class="fa-solid fa-link" aria-hidden="true"></i>
+                      Link (optional)</label>
                     <input class="field-input" type="url" id="challenge-link" placeholder="https://" />
                   </div>
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="challenge-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image (optional)</label>
+                    <label class="field-label" for="challenge-img"><i class="fa-solid fa-image" aria-hidden="true"></i>
+                      Image (optional)</label>
                     <input class="field-input field-file" type="file" id="challenge-img" accept="image/*" />
                   </div>
                 </div>
@@ -358,7 +344,8 @@
                 <div class="highlight-icon highlight-icon--red">
                   <i class="fa-solid fa-rocket" aria-hidden="true"></i>
                 </div>
-                <input class="highlight-checkbox" type="checkbox" id="hl-project" name="highlights" value="project" aria-label="Project Initiated" />
+                <input class="highlight-checkbox" type="checkbox" id="hl-project" name="highlights" value="project"
+                  aria-label="Project Initiated" />
                 <div class="highlight-checkmark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               </div>
               <span class="highlight-card-name">Project Initiated</span>
@@ -367,19 +354,25 @@
               <div class="expand-inner">
                 <div class="field-group">
                   <label class="field-label" for="project-title">Title</label>
-                  <input class="field-input" type="text" id="project-title" placeholder="e.g. Open-source AI Study Kit" data-preview-highlight="project-title" />
+                  <input class="field-input" type="text" id="project-title" placeholder="e.g. Open-source AI Study Kit"
+                    data-preview-highlight="project-title" />
                 </div>
                 <div class="field-group">
-                  <label class="field-label" for="project-desc">Description <span class="field-counter" id="project-desc-count">0 / 280</span></label>
-                  <textarea class="field-textarea" id="project-desc" rows="3" maxlength="280" placeholder="Goal, tech stack, and current status…" data-counter="project-desc-count" data-preview-highlight="project-desc"></textarea>
+                  <label class="field-label" for="project-desc">Description <span class="field-counter"
+                      id="project-desc-count">0 / 280</span></label>
+                  <textarea class="field-textarea" id="project-desc" rows="3" maxlength="280"
+                    placeholder="Goal, tech stack, and current status…" data-counter="project-desc-count"
+                    data-preview-highlight="project-desc"></textarea>
                 </div>
                 <div class="field-row">
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="project-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link (optional)</label>
+                    <label class="field-label" for="project-link"><i class="fa-solid fa-link" aria-hidden="true"></i>
+                      Link (optional)</label>
                     <input class="field-input" type="url" id="project-link" placeholder="https://" />
                   </div>
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="project-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image (optional)</label>
+                    <label class="field-label" for="project-img"><i class="fa-solid fa-image" aria-hidden="true"></i>
+                      Image (optional)</label>
                     <input class="field-input field-file" type="file" id="project-img" accept="image/*" />
                   </div>
                 </div>
@@ -393,7 +386,8 @@
                 <div class="highlight-icon highlight-icon--blue">
                   <i class="fa-solid fa-seedling" aria-hidden="true"></i>
                 </div>
-                <input class="highlight-checkbox" type="checkbox" id="hl-growth" name="highlights" value="growth" aria-label="Personal Growth" />
+                <input class="highlight-checkbox" type="checkbox" id="hl-growth" name="highlights" value="growth"
+                  aria-label="Personal Growth" />
                 <div class="highlight-checkmark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               </div>
               <span class="highlight-card-name">Personal Growth</span>
@@ -402,19 +396,25 @@
               <div class="expand-inner">
                 <div class="field-group">
                   <label class="field-label" for="growth-title">Title</label>
-                  <input class="field-input" type="text" id="growth-title" placeholder="e.g. Became a better public speaker" data-preview-highlight="growth-title" />
+                  <input class="field-input" type="text" id="growth-title"
+                    placeholder="e.g. Became a better public speaker" data-preview-highlight="growth-title" />
                 </div>
                 <div class="field-group">
-                  <label class="field-label" for="growth-desc">Description <span class="field-counter" id="growth-desc-count">0 / 280</span></label>
-                  <textarea class="field-textarea" id="growth-desc" rows="3" maxlength="280" placeholder="Reflect on how you grew this month…" data-counter="growth-desc-count" data-preview-highlight="growth-desc"></textarea>
+                  <label class="field-label" for="growth-desc">Description <span class="field-counter"
+                      id="growth-desc-count">0 / 280</span></label>
+                  <textarea class="field-textarea" id="growth-desc" rows="3" maxlength="280"
+                    placeholder="Reflect on how you grew this month…" data-counter="growth-desc-count"
+                    data-preview-highlight="growth-desc"></textarea>
                 </div>
                 <div class="field-row">
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="growth-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link (optional)</label>
+                    <label class="field-label" for="growth-link"><i class="fa-solid fa-link" aria-hidden="true"></i>
+                      Link (optional)</label>
                     <input class="field-input" type="url" id="growth-link" placeholder="https://" />
                   </div>
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="growth-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image (optional)</label>
+                    <label class="field-label" for="growth-img"><i class="fa-solid fa-image" aria-hidden="true"></i>
+                      Image (optional)</label>
                     <input class="field-input field-file" type="file" id="growth-img" accept="image/*" />
                   </div>
                 </div>
@@ -428,7 +428,8 @@
                 <div class="highlight-icon highlight-icon--green">
                   <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                 </div>
-                <input class="highlight-checkbox" type="checkbox" id="hl-learning" name="highlights" value="learning" aria-label="Learning" />
+                <input class="highlight-checkbox" type="checkbox" id="hl-learning" name="highlights" value="learning"
+                  aria-label="Learning" />
                 <div class="highlight-checkmark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               </div>
               <span class="highlight-card-name">Learning</span>
@@ -437,19 +438,25 @@
               <div class="expand-inner">
                 <div class="field-group">
                   <label class="field-label" for="learning-title">Title</label>
-                  <input class="field-input" type="text" id="learning-title" placeholder="e.g. Completed Gemini API pathway" data-preview-highlight="learning-title" />
+                  <input class="field-input" type="text" id="learning-title"
+                    placeholder="e.g. Completed Gemini API pathway" data-preview-highlight="learning-title" />
                 </div>
                 <div class="field-group">
-                  <label class="field-label" for="learning-desc">Description <span class="field-counter" id="learning-desc-count">0 / 280</span></label>
-                  <textarea class="field-textarea" id="learning-desc" rows="3" maxlength="280" placeholder="What did you learn and how will you apply it?" data-counter="learning-desc-count" data-preview-highlight="learning-desc"></textarea>
+                  <label class="field-label" for="learning-desc">Description <span class="field-counter"
+                      id="learning-desc-count">0 / 280</span></label>
+                  <textarea class="field-textarea" id="learning-desc" rows="3" maxlength="280"
+                    placeholder="What did you learn and how will you apply it?" data-counter="learning-desc-count"
+                    data-preview-highlight="learning-desc"></textarea>
                 </div>
                 <div class="field-row">
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="learning-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link (optional)</label>
+                    <label class="field-label" for="learning-link"><i class="fa-solid fa-link" aria-hidden="true"></i>
+                      Link (optional)</label>
                     <input class="field-input" type="url" id="learning-link" placeholder="https://" />
                   </div>
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="learning-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image (optional)</label>
+                    <label class="field-label" for="learning-img"><i class="fa-solid fa-image" aria-hidden="true"></i>
+                      Image (optional)</label>
                     <input class="field-input field-file" type="file" id="learning-img" accept="image/*" />
                   </div>
                 </div>
@@ -463,7 +470,8 @@
                 <div class="highlight-icon highlight-icon--yellow">
                   <i class="fa-solid fa-trophy" aria-hidden="true"></i>
                 </div>
-                <input class="highlight-checkbox" type="checkbox" id="hl-achievements" name="highlights" value="achievements" aria-label="Achievements" />
+                <input class="highlight-checkbox" type="checkbox" id="hl-achievements" name="highlights"
+                  value="achievements" aria-label="Achievements" />
                 <div class="highlight-checkmark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               </div>
               <span class="highlight-card-name">Achievements</span>
@@ -472,19 +480,25 @@
               <div class="expand-inner">
                 <div class="field-group">
                   <label class="field-label" for="achievements-title">Title</label>
-                  <input class="field-input" type="text" id="achievements-title" placeholder="e.g. Reached 1000 community members" data-preview-highlight="achievements-title" />
+                  <input class="field-input" type="text" id="achievements-title"
+                    placeholder="e.g. Reached 1000 community members" data-preview-highlight="achievements-title" />
                 </div>
                 <div class="field-group">
-                  <label class="field-label" for="achievements-desc">Description <span class="field-counter" id="achievements-desc-count">0 / 280</span></label>
-                  <textarea class="field-textarea" id="achievements-desc" rows="3" maxlength="280" placeholder="Describe the achievement and its significance…" data-counter="achievements-desc-count" data-preview-highlight="achievements-desc"></textarea>
+                  <label class="field-label" for="achievements-desc">Description <span class="field-counter"
+                      id="achievements-desc-count">0 / 280</span></label>
+                  <textarea class="field-textarea" id="achievements-desc" rows="3" maxlength="280"
+                    placeholder="Describe the achievement and its significance…" data-counter="achievements-desc-count"
+                    data-preview-highlight="achievements-desc"></textarea>
                 </div>
                 <div class="field-row">
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="achievements-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link (optional)</label>
+                    <label class="field-label" for="achievements-link"><i class="fa-solid fa-link"
+                        aria-hidden="true"></i> Link (optional)</label>
                     <input class="field-input" type="url" id="achievements-link" placeholder="https://" />
                   </div>
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="achievements-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image (optional)</label>
+                    <label class="field-label" for="achievements-img"><i class="fa-solid fa-image"
+                        aria-hidden="true"></i> Image (optional)</label>
                     <input class="field-input field-file" type="file" id="achievements-img" accept="image/*" />
                   </div>
                 </div>
@@ -498,7 +512,8 @@
                 <div class="highlight-icon highlight-icon--red">
                   <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
                 </div>
-                <input class="highlight-checkbox" type="checkbox" id="hl-bts" name="highlights" value="bts" aria-label="Behind the Scenes" />
+                <input class="highlight-checkbox" type="checkbox" id="hl-bts" name="highlights" value="bts"
+                  aria-label="Behind the Scenes" />
                 <div class="highlight-checkmark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
               </div>
               <span class="highlight-card-name">Behind the Scenes</span>
@@ -507,19 +522,25 @@
               <div class="expand-inner">
                 <div class="field-group">
                   <label class="field-label" for="bts-title">Title</label>
-                  <input class="field-input" type="text" id="bts-title" placeholder="e.g. Late nights building the event platform" data-preview-highlight="bts-title" />
+                  <input class="field-input" type="text" id="bts-title"
+                    placeholder="e.g. Late nights building the event platform" data-preview-highlight="bts-title" />
                 </div>
                 <div class="field-group">
-                  <label class="field-label" for="bts-desc">Description <span class="field-counter" id="bts-desc-count">0 / 280</span></label>
-                  <textarea class="field-textarea" id="bts-desc" rows="3" maxlength="280" placeholder="Share what happens when the cameras are off…" data-counter="bts-desc-count" data-preview-highlight="bts-desc"></textarea>
+                  <label class="field-label" for="bts-desc">Description <span class="field-counter"
+                      id="bts-desc-count">0 / 280</span></label>
+                  <textarea class="field-textarea" id="bts-desc" rows="3" maxlength="280"
+                    placeholder="Share what happens when the cameras are off…" data-counter="bts-desc-count"
+                    data-preview-highlight="bts-desc"></textarea>
                 </div>
                 <div class="field-row">
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="bts-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link (optional)</label>
+                    <label class="field-label" for="bts-link"><i class="fa-solid fa-link" aria-hidden="true"></i> Link
+                      (optional)</label>
                     <input class="field-input" type="url" id="bts-link" placeholder="https://" />
                   </div>
                   <div class="field-group field-group--flex">
-                    <label class="field-label" for="bts-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image (optional)</label>
+                    <label class="field-label" for="bts-img"><i class="fa-solid fa-image" aria-hidden="true"></i> Image
+                      (optional)</label>
                     <input class="field-input field-file" type="file" id="bts-img" accept="image/*" />
                   </div>
                 </div>
@@ -531,22 +552,22 @@
 
       <div class="workspace-footer">
 
-    <button class="btn btn--enhance" id="generateBtn">
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
-        Enhance with AI
-    </button>
+        <button class="btn btn--enhance" id="generateBtn">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          Enhance with AI
+        </button>
 
-    <button class="btn btn--caption" id="captionBtn">
-        <i class="fa-solid fa-pen-nib"></i>
-        Generate Caption
-    </button>
+        <button class="btn btn--caption" id="captionBtn">
+          <i class="fa-solid fa-pen-nib"></i>
+          Generate Caption
+        </button>
 
-    <button class="btn btn--download" id="downloadBtn">
-        <i class="fa-solid fa-download"></i>
-        Download PNG
-    </button>
+        <button class="btn btn--download" id="nextBtn">
+          <i class="fa-solid fa-arrow-right"></i>
+          Next
+        </button>
 
-</div>
+      </div>
 
     </main>
     <aside class="preview-panel" aria-label="Live poster preview">
@@ -607,218 +628,204 @@
           </div>
 
         </div>
-  <div id="googlePosterContainer" >
-    <div class="gp-stage" aria-label="Poster preview stage">
+        <div id="googlePosterContainer">
+          <div class="gp-stage" aria-label="Poster preview stage">
 
-    <article
-      class="gp-poster"
-      id="gp-poster-root"
-      role="img"
-      aria-label="Monthly Highlights poster for Abhishek Chauhan, June 2026"
-    >
+            <article class="gp-poster" id="gp-poster-root" role="img"
+              aria-label="Monthly Highlights poster for Abhishek Chauhan, June 2026">
 
-      <header class="gp-header" role="banner">
-        <div class="gp-stripe" aria-hidden="true">
-          <span class="gp-stripe__seg gp-stripe__seg--blue"></span>
-          <span class="gp-stripe__seg gp-stripe__seg--red"></span>
-          <span class="gp-stripe__seg gp-stripe__seg--yellow"></span>
-          <span class="gp-stripe__seg gp-stripe__seg--green"></span>
-        </div>
+              <header class="gp-header" role="banner">
+                <div class="gp-stripe" aria-hidden="true">
+                  <span class="gp-stripe__seg gp-stripe__seg--blue"></span>
+                  <span class="gp-stripe__seg gp-stripe__seg--red"></span>
+                  <span class="gp-stripe__seg gp-stripe__seg--yellow"></span>
+                  <span class="gp-stripe__seg gp-stripe__seg--green"></span>
+                </div>
 
-        <div class="gp-header__inner">
-          <div class="gp-wordmark" aria-label="Google branding">
-            <span class="gp-wordmark__dot gp-wordmark__dot--blue"  aria-hidden="true"></span>
-            <span class="gp-wordmark__dot gp-wordmark__dot--red"   aria-hidden="true"></span>
-            <span class="gp-wordmark__dot gp-wordmark__dot--yellow" aria-hidden="true"></span>
-            <span class="gp-wordmark__dot gp-wordmark__dot--green" aria-hidden="true"></span>
-            <span class="gp-wordmark__text">Google</span>
+                <div class="gp-header__inner">
+                  <div class="gp-wordmark" aria-label="Google branding">
+                    <span class="gp-wordmark__dot gp-wordmark__dot--blue" aria-hidden="true"></span>
+                    <span class="gp-wordmark__dot gp-wordmark__dot--red" aria-hidden="true"></span>
+                    <span class="gp-wordmark__dot gp-wordmark__dot--yellow" aria-hidden="true"></span>
+                    <span class="gp-wordmark__dot gp-wordmark__dot--green" aria-hidden="true"></span>
+                    <span class="gp-wordmark__text">Google</span>
+                  </div>
+
+                  <hgroup class="gp-header__titles">
+                    <p class="gp-header__eyebrow">Student Ambassador Program</p>
+                    <h1 class="gp-header__headline" id="gp-headline">Monthly Highlights</h1>
+                  </hgroup>
+                </div>
+              </header>
+
+              <div class="gp-divider gp-divider--gradient" role="separator" aria-hidden="true"></div>
+
+              <section class="gp-profile" aria-labelledby="gp-profile-name" id="gp-profile-section">
+                <span class="gp-profile__month-mark" id="gp-month-mark" aria-hidden="true">06</span>
+                <figure class="gp-avatar-wrap">
+                  <img class="gp-avatar" id="gp-avatar-img"
+                    src="https://ui-avatars.com/api/?name=Abhishek+Chauhan&size=240&background=4285F4&color=ffffff&bold=true&font-size=0.4"
+                    alt="Profile photo of Abhishek Chauhan" width="120" height="120" />
+                </figure>
+
+                <div class="gp-profile__identity">
+                  <h2 class="gp-profile__name" id="gp-profile-name" data-gp-field="name">
+                    Abhishek Chauhan
+                  </h2>
+                  <p class="gp-profile__role" id="gp-profile-role" data-gp-field="role">
+                    Google Student Ambassador
+                  </p>
+                  <p class="gp-profile__month" id="gp-profile-month" data-gp-field="month">
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                    June 2026
+                  </p>
+                </div>
+              </section>
+
+              <div class="gp-divider" role="separator" aria-hidden="true"></div>
+
+              <section class="gp-highlights" aria-labelledby="gp-highlights-heading" id="gp-highlights-section">
+                <h2 class="gp-highlights__heading" id="gp-highlights-heading">
+                  <span class="gp-highlights__heading-accent" aria-hidden="true"></span>
+                  Highlights
+                </h2>
+                <div class="gp-cards" id="gp-cards-container" role="list">
+
+                  <article class="gp-card gp-card--blue gp-fade-in" role="listitem" data-gp-index="0">
+                    <div class="gp-card__icon-wrap gp-card__icon-wrap--blue" aria-hidden="true">
+                      <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <div class="gp-card__content">
+                      <h3 class="gp-card__title" data-gp-field="highlight-title">
+                        Conducted AI Workshop
+                      </h3>
+                      <p class="gp-card__desc" data-gp-field="highlight-desc">
+                        Led a hands-on workshop introducing 60+ students to Gemini APIs and responsible AI development
+                        practices.
+                      </p>
+                    </div>
+                    <span class="gp-card__check" aria-hidden="true">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </article>
+
+                  <article class="gp-card gp-card--green gp-fade-in" role="listitem" data-gp-index="1"
+                    style="animation-delay:.08s">
+                    <div class="gp-card__icon-wrap gp-card__icon-wrap--green" aria-hidden="true">
+                      <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <div class="gp-card__content">
+                      <h3 class="gp-card__title" data-gp-field="highlight-title">
+                        Mentored Students
+                      </h3>
+                      <p class="gp-card__desc" data-gp-field="highlight-desc">
+                        Provided one-on-one mentorship to 15 aspiring developers, guiding career paths in cloud and AI.
+                      </p>
+                    </div>
+                    <span class="gp-card__check" aria-hidden="true">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </article>
+
+                  <article class="gp-card gp-card--red gp-fade-in" role="listitem" data-gp-index="2"
+                    style="animation-delay:.16s">
+                    <div class="gp-card__icon-wrap gp-card__icon-wrap--red" aria-hidden="true">
+                      <i class="fa-solid fa-calendar-star"></i>
+                    </div>
+                    <div class="gp-card__content">
+                      <h3 class="gp-card__title" data-gp-field="highlight-title">
+                        Organized Community Events
+                      </h3>
+                      <p class="gp-card__desc" data-gp-field="highlight-desc">
+                        Planned and executed two chapter meetups, bringing together 120+ local tech enthusiasts.
+                      </p>
+                    </div>
+                    <span class="gp-card__check" aria-hidden="true">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </article>
+
+                  <article class="gp-card gp-card--blue gp-fade-in" role="listitem" data-gp-index="3"
+                    style="animation-delay:.24s">
+                    <div class="gp-card__icon-wrap gp-card__icon-wrap--blue" aria-hidden="true">
+                      <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div class="gp-card__content">
+                      <h3 class="gp-card__title" data-gp-field="highlight-title">
+                        Built AI Portfolio Generator
+                      </h3>
+                      <p class="gp-card__desc" data-gp-field="highlight-desc">
+                        Developed a full-stack tool using Spring Boot and Gemini to auto-generate ambassador portfolios.
+                      </p>
+                    </div>
+                    <span class="gp-card__check" aria-hidden="true">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </article>
+
+                  <article class="gp-card gp-card--yellow gp-fade-in" role="listitem" data-gp-index="4"
+                    style="animation-delay:.32s">
+                    <div class="gp-card__icon-wrap gp-card__icon-wrap--yellow" aria-hidden="true">
+                      <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div class="gp-card__content">
+                      <h3 class="gp-card__title" data-gp-field="highlight-title">
+                        Hosted Technical Sessions
+                      </h3>
+                      <p class="gp-card__desc" data-gp-field="highlight-desc">
+                        Delivered three technical deep-dives on Firebase, Vertex AI, and Google Cloud architecture
+                        patterns.
+                      </p>
+                    </div>
+                    <span class="gp-card__check" aria-hidden="true">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </article>
+
+                </div>
+              </section>
+
+              <div class="gp-divider" role="separator" aria-hidden="true"></div>
+
+              <footer class="gp-footer" id="gp-footer-section" role="contentinfo">
+
+                <div class="gp-footer__inner">
+                  <div class="gp-footer__brand">
+                    <div class="gp-footer__dots" aria-hidden="true">
+                      <span class="gp-footer__dot gp-footer__dot--blue"></span>
+                      <span class="gp-footer__dot gp-footer__dot--red"></span>
+                      <span class="gp-footer__dot gp-footer__dot--yellow"></span>
+                      <span class="gp-footer__dot gp-footer__dot--green"></span>
+                    </div>
+                    <span class="gp-footer__program">Student Ambassador Program</span>
+                  </div>
+
+                  <p class="gp-footer__tag" id="gp-footer-tag">#BuildWithAI</p>
+                </div>
+
+                <div class="gp-stripe gp-stripe--footer" aria-hidden="true">
+                  <span class="gp-stripe__seg gp-stripe__seg--blue"></span>
+                  <span class="gp-stripe__seg gp-stripe__seg--red"></span>
+                  <span class="gp-stripe__seg gp-stripe__seg--yellow"></span>
+                  <span class="gp-stripe__seg gp-stripe__seg--green"></span>
+                </div>
+              </footer>
+            </article>
           </div>
-
-          <hgroup class="gp-header__titles">
-            <p class="gp-header__eyebrow">Student Ambassador Program</p>
-            <h1 class="gp-header__headline" id="gp-headline">Monthly Highlights</h1>
-          </hgroup>
         </div>
-      </header>
-
-      <div class="gp-divider gp-divider--gradient" role="separator" aria-hidden="true"></div>
-
-      <section
-        class="gp-profile"
-        aria-labelledby="gp-profile-name"
-        id="gp-profile-section"
-        >
-        <span class="gp-profile__month-mark" id="gp-month-mark" aria-hidden="true">06</span>
-        <figure class="gp-avatar-wrap">
-          <img
-            class="gp-avatar"
-            id="gp-avatar-img"
-            src="https://ui-avatars.com/api/?name=Abhishek+Chauhan&size=240&background=4285F4&color=ffffff&bold=true&font-size=0.4"
-            alt="Profile photo of Abhishek Chauhan"
-            width="120"
-            height="120"
-          />
-        </figure>
-
-        <div class="gp-profile__identity">
-          <h2 class="gp-profile__name" id="gp-profile-name" data-gp-field="name">
-            Abhishek Chauhan
-          </h2>
-          <p class="gp-profile__role" id="gp-profile-role" data-gp-field="role">
-            Google Student Ambassador
-          </p>
-          <p class="gp-profile__month" id="gp-profile-month" data-gp-field="month">
-            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
-            June 2026
-          </p>
-        </div>
-      </section>
-
-      <div class="gp-divider" role="separator" aria-hidden="true"></div>
-
-      <section
-        class="gp-highlights"
-        aria-labelledby="gp-highlights-heading"
-        id="gp-highlights-section"
-      >
-        <h2 class="gp-highlights__heading" id="gp-highlights-heading">
-          <span class="gp-highlights__heading-accent" aria-hidden="true"></span>
-          Highlights
-        </h2>
-        <div class="gp-cards" id="gp-cards-container" role="list">
-
-          <article class="gp-card gp-card--blue gp-fade-in" role="listitem" data-gp-index="0">
-            <div class="gp-card__icon-wrap gp-card__icon-wrap--blue" aria-hidden="true">
-              <i class="fa-solid fa-microphone-lines"></i>
-            </div>
-            <div class="gp-card__content">
-              <h3 class="gp-card__title" data-gp-field="highlight-title">
-                Conducted AI Workshop
-              </h3>
-              <p class="gp-card__desc" data-gp-field="highlight-desc">
-                Led a hands-on workshop introducing 60+ students to Gemini APIs and responsible AI development practices.
-              </p>
-            </div>
-            <span class="gp-card__check" aria-hidden="true">
-              <i class="fa-solid fa-check"></i>
-            </span>
-          </article>
-
-          <article class="gp-card gp-card--green gp-fade-in" role="listitem" data-gp-index="1" style="animation-delay:.08s">
-            <div class="gp-card__icon-wrap gp-card__icon-wrap--green" aria-hidden="true">
-              <i class="fa-solid fa-people-group"></i>
-            </div>
-            <div class="gp-card__content">
-              <h3 class="gp-card__title" data-gp-field="highlight-title">
-                Mentored Students
-              </h3>
-              <p class="gp-card__desc" data-gp-field="highlight-desc">
-                Provided one-on-one mentorship to 15 aspiring developers, guiding career paths in cloud and AI.
-              </p>
-            </div>
-            <span class="gp-card__check" aria-hidden="true">
-              <i class="fa-solid fa-check"></i>
-            </span>
-          </article>
-
-          <article class="gp-card gp-card--red gp-fade-in" role="listitem" data-gp-index="2" style="animation-delay:.16s">
-            <div class="gp-card__icon-wrap gp-card__icon-wrap--red" aria-hidden="true">
-              <i class="fa-solid fa-calendar-star"></i>
-            </div>
-            <div class="gp-card__content">
-              <h3 class="gp-card__title" data-gp-field="highlight-title">
-                Organized Community Events
-              </h3>
-              <p class="gp-card__desc" data-gp-field="highlight-desc">
-                Planned and executed two chapter meetups, bringing together 120+ local tech enthusiasts.
-              </p>
-            </div>
-            <span class="gp-card__check" aria-hidden="true">
-              <i class="fa-solid fa-check"></i>
-            </span>
-          </article>
-
-          <article class="gp-card gp-card--blue gp-fade-in" role="listitem" data-gp-index="3" style="animation-delay:.24s">
-            <div class="gp-card__icon-wrap gp-card__icon-wrap--blue" aria-hidden="true">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-            <div class="gp-card__content">
-              <h3 class="gp-card__title" data-gp-field="highlight-title">
-                Built AI Portfolio Generator
-              </h3>
-              <p class="gp-card__desc" data-gp-field="highlight-desc">
-                Developed a full-stack tool using Spring Boot and Gemini to auto-generate ambassador portfolios.
-              </p>
-            </div>
-            <span class="gp-card__check" aria-hidden="true">
-              <i class="fa-solid fa-check"></i>
-            </span>
-          </article>
-
-          <article class="gp-card gp-card--yellow gp-fade-in" role="listitem" data-gp-index="4" style="animation-delay:.32s">
-            <div class="gp-card__icon-wrap gp-card__icon-wrap--yellow" aria-hidden="true">
-              <i class="fa-solid fa-chalkboard-user"></i>
-            </div>
-            <div class="gp-card__content">
-              <h3 class="gp-card__title" data-gp-field="highlight-title">
-                Hosted Technical Sessions
-              </h3>
-              <p class="gp-card__desc" data-gp-field="highlight-desc">
-                Delivered three technical deep-dives on Firebase, Vertex AI, and Google Cloud architecture patterns.
-              </p>
-            </div>
-            <span class="gp-card__check" aria-hidden="true">
-              <i class="fa-solid fa-check"></i>
-            </span>
-          </article>
-
-        </div>
-      </section>
-
-      <div class="gp-divider" role="separator" aria-hidden="true"></div>
-
-      <footer class="gp-footer" id="gp-footer-section" role="contentinfo">
-
-        <div class="gp-footer__inner">
-          <div class="gp-footer__brand">
-            <div class="gp-footer__dots" aria-hidden="true">
-              <span class="gp-footer__dot gp-footer__dot--blue"></span>
-              <span class="gp-footer__dot gp-footer__dot--red"></span>
-              <span class="gp-footer__dot gp-footer__dot--yellow"></span>
-              <span class="gp-footer__dot gp-footer__dot--green"></span>
-            </div>
-            <span class="gp-footer__program">Student Ambassador Program</span>
-          </div>
-
-          <p class="gp-footer__tag" id="gp-footer-tag">#BuildWithAI</p>
-        </div>
-
-        <div class="gp-stripe gp-stripe--footer" aria-hidden="true">
-          <span class="gp-stripe__seg gp-stripe__seg--blue"></span>
-          <span class="gp-stripe__seg gp-stripe__seg--red"></span>
-          <span class="gp-stripe__seg gp-stripe__seg--yellow"></span>
-          <span class="gp-stripe__seg gp-stripe__seg--green"></span>
-        </div>
-      </footer>
-    </article>
-  </div>
-  </div>
       </div>
       <div class="caption-box" id="captionBox" hidden>
         <div class="caption-box-header">
 
-    <div class="caption-title">
-        <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
-        Generated Caption
-    </div>
-    <button
-        type="button"
-        id="copyCaptionBtn"
-        class="caption-copy-btn">
-        <i class="fa-regular fa-copy"></i>
-        Copy
-    </button>
-    </div>
+          <div class="caption-title">
+            <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+            Generated Caption
+          </div>
+          <button type="button" id="copyCaptionBtn" class="caption-copy-btn">
+            <i class="fa-regular fa-copy"></i>
+            Copy
+          </button>
+        </div>
         <p class="caption-text" id="captionText"></p>
       </div>
     </aside>
@@ -827,4 +834,5 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="../js/script.js"></script>
 </body>
+
 </html>

@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
+
+  <base id="pageBase">
+  <script>
+    document.getElementById("pageBase").href =
+      new URL(".", window.location.href).href;
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Student Ambassador — Monthly Highlights Poster</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-  />
+
+  <title>Modern Template — Monthly Highlights Poster</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../css/google-poster.css" />
 </head>
+
 <body class="gp-page">
+  <script>
+
+    window.IS_PREVIEW = true;
+
+  </script>
   <div class="gp-stage" aria-label="Poster preview stage">
-    <article
-      class="gp-poster"
-      id="gp-poster-root"
-      role="img"
-      aria-label="Monthly Highlights poster for Abhishek Chauhan, June 2026"
-    >
+    <article class="gp-poster" id="gp-poster-root" role="img"
+      aria-label="Monthly Highlights poster for Abhishek Chauhan, June 2026">
       <header class="gp-header" role="banner">
         <div class="gp-stripe" aria-hidden="true">
           <span class="gp-stripe__seg gp-stripe__seg--blue"></span>
@@ -34,8 +40,8 @@
         </div>
         <div class="gp-header__inner">
           <div class="gp-wordmark" aria-label="Google branding">
-            <span class="gp-wordmark__dot gp-wordmark__dot--blue"  aria-hidden="true"></span>
-            <span class="gp-wordmark__dot gp-wordmark__dot--red"   aria-hidden="true"></span>
+            <span class="gp-wordmark__dot gp-wordmark__dot--blue" aria-hidden="true"></span>
+            <span class="gp-wordmark__dot gp-wordmark__dot--red" aria-hidden="true"></span>
             <span class="gp-wordmark__dot gp-wordmark__dot--yellow" aria-hidden="true"></span>
             <span class="gp-wordmark__dot gp-wordmark__dot--green" aria-hidden="true"></span>
             <span class="gp-wordmark__text">Google</span>
@@ -47,21 +53,12 @@
         </div>
       </header>
       <div class="gp-divider gp-divider--gradient" role="separator" aria-hidden="true"></div>
-      <section
-        class="gp-profile"
-        aria-labelledby="gp-profile-name"
-        id="gp-profile-section"
-      >
+      <section class="gp-profile" aria-labelledby="gp-profile-name" id="gp-profile-section">
         <span class="gp-profile__month-mark" id="gp-month-mark" aria-hidden="true">06</span>
         <figure class="gp-avatar-wrap">
-          <img
-            class="gp-avatar"
-            id="gp-avatar-img"
+          <img class="gp-avatar" id="gp-avatar-img"
             src="https://ui-avatars.com/api/?name=Abhishek+Chauhan&size=240&background=4285F4&color=ffffff&bold=true&font-size=0.4"
-            alt="Profile photo of Abhishek Chauhan"
-            width="120"
-            height="120"
-          />
+            alt="Profile photo of Abhishek Chauhan" width="120" height="120" />
         </figure>
         <div class="gp-profile__identity">
           <h2 class="gp-profile__name" id="gp-profile-name" data-gp-field="name">
@@ -77,11 +74,7 @@
         </div>
       </section>
       <div class="gp-divider" role="separator" aria-hidden="true"></div>
-      <section
-        class="gp-highlights"
-        aria-labelledby="gp-highlights-heading"
-        id="gp-highlights-section"
-      >
+      <section class="gp-highlights" aria-labelledby="gp-highlights-heading" id="gp-highlights-section">
         <h2 class="gp-highlights__heading" id="gp-highlights-heading">
           <span class="gp-highlights__heading-accent" aria-hidden="true"></span>
           Highlights
@@ -96,14 +89,16 @@
                 Conducted AI Workshop
               </h3>
               <p class="gp-card__desc" data-gp-field="highlight-desc">
-                Led a hands-on workshop introducing 60+ students to Gemini APIs and responsible AI development practices.
+                Led a hands-on workshop introducing 60+ students to Gemini APIs and responsible AI development
+                practices.
               </p>
             </div>
             <span class="gp-card__check" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </span>
           </article>
-          <article class="gp-card gp-card--green gp-fade-in" role="listitem" data-gp-index="1" style="animation-delay:.08s">
+          <article class="gp-card gp-card--green gp-fade-in" role="listitem" data-gp-index="1"
+            style="animation-delay:.08s">
             <div class="gp-card__icon-wrap gp-card__icon-wrap--green" aria-hidden="true">
               <i class="fa-solid fa-people-group"></i>
             </div>
@@ -119,7 +114,8 @@
               <i class="fa-solid fa-check"></i>
             </span>
           </article>
-          <article class="gp-card gp-card--red gp-fade-in" role="listitem" data-gp-index="2" style="animation-delay:.16s">
+          <article class="gp-card gp-card--red gp-fade-in" role="listitem" data-gp-index="2"
+            style="animation-delay:.16s">
             <div class="gp-card__icon-wrap gp-card__icon-wrap--red" aria-hidden="true">
               <i class="fa-solid fa-calendar-star"></i>
             </div>
@@ -135,7 +131,8 @@
               <i class="fa-solid fa-check"></i>
             </span>
           </article>
-          <article class="gp-card gp-card--blue gp-fade-in" role="listitem" data-gp-index="3" style="animation-delay:.24s">
+          <article class="gp-card gp-card--blue gp-fade-in" role="listitem" data-gp-index="3"
+            style="animation-delay:.24s">
             <div class="gp-card__icon-wrap gp-card__icon-wrap--blue" aria-hidden="true">
               <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
@@ -151,7 +148,8 @@
               <i class="fa-solid fa-check"></i>
             </span>
           </article>
-          <article class="gp-card gp-card--yellow gp-fade-in" role="listitem" data-gp-index="4" style="animation-delay:.32s">
+          <article class="gp-card gp-card--yellow gp-fade-in" role="listitem" data-gp-index="4"
+            style="animation-delay:.32s">
             <div class="gp-card__icon-wrap gp-card__icon-wrap--yellow" aria-hidden="true">
               <i class="fa-solid fa-chalkboard-user"></i>
             </div>
@@ -192,11 +190,25 @@
       </footer>
     </article>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="GooglePoster.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      GooglePoster.renderPoster(GooglePoster.DEFAULT_DATA);
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const saved = localStorage.getItem("portfolioData");
+
+      if (saved) {
+
+        GooglePoster.renderPoster(JSON.parse(saved));
+
+      } else {
+
+        GooglePoster.renderPoster(GooglePoster.DEFAULT_DATA);
+
+      }
+
     });
   </script>
 </body>
+
 </html>

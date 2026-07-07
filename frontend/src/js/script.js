@@ -26,10 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initLivePreviewBindings();
   initGenerateBtn();
   initCaptionBtn();
-  initDownloadBtn();
+  initNextBtn();
+  loadPosterData();
   initCopyCaptionBtn();
   initResetBtn();
   updateProgress();
+
 });
 
 function setLiveDate() {
@@ -44,7 +46,6 @@ function initThemeToggle() {
   const btn = $('#themeToggle');
   if (!btn) return;
 
-  /* Persist preference */
   const saved = localStorage.getItem('aa-theme') || 'light';
   setTheme(saved);
 
@@ -224,7 +225,6 @@ function toggleHighlightCard(card, checkbox, expand) {
   if (isChecked) {
     card.classList.add('is-active');
     expand.hidden = false;
-    /* Next tick to allow 'hidden' removal before class triggers CSS transition */
     requestAnimationFrame(() => {
       requestAnimationFrame(() => expand.classList.add('is-open'));
     });
@@ -233,7 +233,6 @@ function toggleHighlightCard(card, checkbox, expand) {
     card.classList.remove('is-active');
     expand.classList.remove('is-open');
     expand.setAttribute('aria-hidden', 'true');
-    /* Hide after transition */
     expand.addEventListener('transitionend', () => {
       if (!checkbox.checked) expand.hidden = true;
     }, { once: true });
@@ -253,10 +252,21 @@ function initCharCounters() {
     counter.textContent = `0 / ${max}`;
 
     textarea.addEventListener('input', () => {
-      const len = textarea.value.length;
-      counter.textContent = `${len} / ${max}`;
-      counter.style.color = len >= max * .9 ? 'var(--c-red)' : 'var(--text-3)';
-    });
+
+    const len = textarea.value.length;
+
+    counter.textContent = `${len} / ${max}`;
+
+    counter.style.color =
+        len >= max * .9
+            ? 'var(--c-red)'
+            : 'var(--text-3)';
+
+    refreshPosterHighlights();
+
+    savePosterData();
+
+});
   });
 }
 
@@ -318,15 +328,23 @@ if (from === "#ambassadorMonth") {
     }
 
 }
+savePosterData();
     });
   });
 
-  document.addEventListener('input', (e) => {
+  document.addEventListener("input", (e) => {
+
     const el = e.target;
+
     if (el.dataset.previewHighlight) {
-      refreshPosterHighlights();
+
+        refreshPosterHighlights();
+
+        savePosterData();
+
     }
-  });
+
+});
 }
 
 function updateAvatarInitials(name) {
@@ -638,6 +656,7 @@ function initGenerateBtn() {
                 });
 
                 refreshPosterHighlights();
+                savePosterData();
             }
 
             showToast("✨ AI suggestions applied!");
@@ -735,72 +754,20 @@ function initCaptionBtn() {
 
 }
 
-function initDownloadBtn() {
-  const btn = $('#downloadBtn');
-  if (!btn) return;
+function initNextBtn() {
 
-  btn.addEventListener('click', async () => {
+    const btn = $("#nextBtn");
 
-    setButtonLoading(btn, true, "Preparing...");
+    if (!btn) return;
 
-    try {
+    btn.addEventListener("click", () => {
 
-        const poster = document.querySelector(".gp-poster");
-        const stage = document.querySelector(".gp-stage");
+        savePosterData();
 
-        const originalTransform = stage.style.transform;
+        window.location.href = "templates.html";
 
-        stage.style.transform = "none";
-        
+    });
 
-        if (!poster) {
-            showToast("Poster not found.");
-            return;
-        }
-
-        const canvas = await html2canvas(poster, {
-
-    backgroundColor: "#ffffff",
-
-    scale: 2,
-
-    useCORS: true,
-
-    allowTaint: true,
-
-    logging: false,
-
-});
-
-        const link = document.createElement("a");
-
-        link.download =
-            `Monthly-Highlights-${Date.now()}.png`;
-
-        link.href = canvas.toDataURL("image/png");
-
-        link.click();
-        stage.style.transform = originalTransform;
-
-        showToast("Poster downloaded!");
-
-    }
-
-    catch (err) {
-
-        console.error(err);
-
-        showToast("Download failed.");
-
-    }
-
-    finally {
-
-        setButtonLoading(btn, false);
-
-    }
-
-});
 }
 
 function initResetBtn() {
@@ -854,6 +821,7 @@ function resetForm() {
 
   updateProgress();
   refreshPosterHighlights();
+  savePosterData();
 }
 
 function startButtonCooldown(button, seconds = 30) {
@@ -947,4 +915,128 @@ function toTitleCase(str) {
   return str.replace(/([A-Z])/g, ' $1')
     .replace(/^./, c => c.toUpperCase())
     .trim();
+}
+function savePosterData() {
+
+    const data = {
+
+        profile: {
+
+            name: $("#ambassadorName")?.value || "",
+
+            role: $("#ambassadorRole")?.value || "",
+
+            gid: $("#ambassadorGid")?.value || "",
+
+            month: ($("#ambassadorMonth")?.value || "") + " 2026",
+
+            avatarSrc: avatarImg.hidden
+                ? ""
+                : avatarImg.src
+
+        },
+
+        highlights: []
+
+    };
+
+    $$(".highlight-checkbox:checked").forEach(cb => {
+
+        const key = cb.value;
+
+        data.highlights.push({
+
+            type: key,
+
+            title:
+                $(`#${key}-title`)?.value || "",
+
+            description:
+                $(`#${key}-desc`)?.value || ""
+
+        });
+
+    });
+
+    localStorage.setItem(
+        "portfolioData",
+        JSON.stringify(data)
+    );
+}
+function loadPosterData() {
+
+    const saved = localStorage.getItem("portfolioData");
+
+    if (!saved) return;
+
+    const data = JSON.parse(saved);
+
+    $("#ambassadorName").value = data.profile.name || "";
+    $("#ambassadorRole").value = data.profile.role || "";
+    $("#ambassadorGid").value = data.profile.gid || "";
+
+    const month = (data.profile.month || "").replace(" 2026", "");
+    $("#ambassadorMonth").value = month;
+
+    $("#previewName").textContent = data.profile.name || "Your Name";
+    $("#previewRole").textContent = data.profile.role || "Google Student Ambassador";
+    $("#previewGid").textContent = data.profile.gid || "gid-xxxx";
+    $("#previewMonth").textContent = month || "Month";
+if (data.profile.avatarSrc) {
+
+    avatarImg.src = data.profile.avatarSrc;
+    avatarImg.hidden = false;
+
+    avatarInit.hidden = true;
+
+    const preview = $("#photoPreview");
+
+    if (preview) {
+
+        preview.innerHTML = "";
+
+        const img = document.createElement("img");
+
+        img.src = data.profile.avatarSrc;
+        img.alt = "Profile photo";
+
+        img.style.cssText =
+            "width:100%;height:100%;object-fit:cover;border-radius:50%;";
+
+        preview.appendChild(img);
+
+        preview.classList.add("has-image");
+    }
+
+    const gpAvatar = document.getElementById("gp-avatar-img");
+
+    if (gpAvatar) {
+        gpAvatar.src = data.profile.avatarSrc;
+    }
+
+}(data.highlights || []).forEach(h => {
+
+    const checkbox = $(`.highlight-checkbox[value="${h.type}"]`);
+
+    if (!checkbox) return;
+
+    checkbox.checked = true;
+
+    checkbox.dispatchEvent(new Event("change"));
+
+    const titleInput = $(`#${h.type}-title`);
+    if (titleInput) {
+        titleInput.value = h.title || "";
+    }
+
+    const descInput = $(`#${h.type}-desc`);
+    if (descInput) {
+        descInput.value = h.description || "";
+    }
+
+});
+
+refreshPosterHighlights();
+updateProgress();
+
 }

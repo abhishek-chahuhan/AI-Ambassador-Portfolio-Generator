@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <base id="pageBase">
+  <script>
+    document.getElementById("pageBase").href =
+      new URL(".", window.location.href).href;
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Modern Template — Monthly Highlights Poster</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="dark.css" />
+</head>
+
+<body class="dp-page">
+  <div class="dp-stage" aria-label="Poster preview stage">
+    <article class="dp-poster" id="posterRoot" role="img" aria-label="Monthly Highlights poster">
+
+      <div class="dp-bg" aria-hidden="true">
+        <span class="dp-glow dp-glow--blue"></span>
+        <span class="dp-glow dp-glow--purple"></span>
+        <span class="dp-glow dp-glow--center"></span>
+        <span class="dp-grid"></span>
+        <span class="dp-streak dp-streak--1"></span>
+        <span class="dp-streak dp-streak--2"></span>
+        <div class="dp-particles" id="particles"></div>
+      </div>
+
+      <header class="dp-header" role="banner">
+        <div class="dp-brand">
+          <span class="dp-brand__logo" aria-hidden="true">
+            <i class="fa-solid fa-code"></i>
+          </span>
+          <span class="dp-brand__text" id="role">Google Student<br />Ambassador</span>
+        </div>
+        <div class="dp-team">
+          <i class="fa-solid fa-sparkles dp-team__spark" aria-hidden="true"></i>
+          <span id="teamTag">#TeamGemini</span>
+        </div>
+      </header>
+
+      <div class="dp-title-wrap">
+        <h1 class="dp-title">
+          <span class="dp-title__top" id="heroTitle">MONTHLY</span>
+          <span class="dp-title__bottom" id="heroSubtitle">HIGHLIGHTS</span>
+        </h1>
+        <div class="dp-month" id="month">JUNE 2026</div>
+      </div>
+
+      <ul class="dp-tags" id="taglineContainer" aria-label="Tagline"></ul>
+
+      <div class="dp-main">
+        <div class="dp-col dp-col--left" id="cardsLeft"></div>
+
+        <figure class="dp-hero">
+          <div class="dp-hero__frame">
+            <img id="profileImage" class="dp-hero__img" src="assets/hero.png" alt="Ambassador hero"
+              crossorigin="anonymous" />
+            <figcaption class="dp-hero__caption" id="userName">Google Student Ambassador</figcaption>
+          </div>
+        </figure>
+
+        <div class="dp-col dp-col--right" id="cardsRight"></div>
+      </div>
+
+      <div class="dp-lower">
+        <div class="dp-panel dp-panel--takeaway">
+          <div class="dp-panel__head">
+            <span class="dp-panel__icon"><i class="fa-solid fa-rocket"></i></span>
+            <h3 class="dp-panel__title" id="takeawayTitle">Biggest Takeaway</h3>
+          </div>
+          <p class="dp-panel__text" id="takeawayText"></p>
+        </div>
+
+        <div class="dp-panel dp-panel--quote">
+          <span class="dp-panel__quoteicon"><i class="fa-solid fa-lightbulb"></i></span>
+          <p class="dp-quote__text" id="quote"></p>
+          <p class="dp-quote__author" id="quoteAuthor"></p>
+        </div>
+      </div>
+
+      <div class="dp-skills" id="skillsContainer" aria-label="Skills"></div>
+
+      <footer class="dp-footer" role="contentinfo">
+        <span class="dp-footer__id" id="programId">GID: 1609</span>
+        <div class="dp-footer__socials" id="socialLinks"></div>
+        <div class="dp-footer__tags" id="hashtags"></div>
+      </footer>
+
+    </article>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="dark.js"></script>
+</body>
+
+</html>

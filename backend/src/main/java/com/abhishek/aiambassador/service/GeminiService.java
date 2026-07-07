@@ -5,8 +5,12 @@ import com.abhishek.aiambassador.dto.EnhanceResponse;
 import com.abhishek.aiambassador.service.prompt.PromptBuilder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.genai.Client;
-import com.google.genai.types.GenerateContentResponse;
+import org.springframework.http.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.abhishek.aiambassador.dto.CaptionResponse;
@@ -14,45 +18,30 @@ import com.abhishek.aiambassador.dto.CaptionResponse;
 @Service
 public class GeminiService {
 
-    @Value("${gemini.api.key}")
+    @Value("${groq.api.key}")
     private String apiKey;
 
-    @Value("${gemini.model}")
+    @Value("${groq.model}")
     private String model;
 
     public EnhanceResponse enhance(EnhanceRequest request) throws JsonProcessingException {
 
-        Client client = Client.builder()
-                .apiKey(apiKey)
-                .build();
 
-        // Build prompt
+
         String prompt = PromptBuilder.buildEnhancePrompt(request);
-
-        // Send to Gemini
-        GenerateContentResponse response =
-                client.models.generateContent(
-                        model,
-                        prompt,
-                        null
-                );
+        String response = callGroq(prompt);
 
         // Print Gemini response
         System.out.println("========== GEMINI ==========");
-        System.out.println(response.text());
+        System.out.println(response);
         System.out.println("============================");
 
         // Convert JSON into Java object
         ObjectMapper mapper = new ObjectMapper();
 
-        return mapper.readValue(response.text(), EnhanceResponse.class);
+        return mapper.readValue(response, EnhanceResponse.class);
     }
     public CaptionResponse generateCaption(EnhanceRequest request) {
-
-        Client client = Client.builder()
-                .apiKey(apiKey)
-                .build();
-
         StringBuilder prompt = new StringBuilder();
 
         prompt.append("""
@@ -92,15 +81,9 @@ Rules:
                     .append(h.getDescription())
                     .append("\n");
         });
+        String response = callGroq(prompt.toString());
 
-        GenerateContentResponse response =
-                client.models.generateContent(
-                        model,
-                        prompt.toString(),
-                        null
-                );
-
-        String finalCaption = appendMandatoryFooter(response.text());
+        String finalCaption = appendMandatoryFooter(response);
 
         return new CaptionResponse(finalCaption);
     }
@@ -123,4 +106,40 @@ Rules:
 
         return result.toString();
     }
+    private String callGroq(String prompt) {
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(apiKey);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("model", model);
+
+        body.put("messages", List.of(
+                Map.of(
+                        "role", "user",
+                        "content", prompt
+                )
+        ));
+
+        body.put("temperature", 0.8);
+
+        HttpEntity<Map<String, Object>> entity =
+                new HttpEntity<>(body, headers);
+
+        Map response = restTemplate.postForObject(
+                "https://api.groq.com/openai/v1/chat/completions",
+                entity,
+                Map.class
+        );
+
+        List choices = (List) response.get("choices");
+        Map first = (Map) choices.get(0);
+        Map message = (Map) first.get("message");
+
+        return message.get("content").toString();
+    }
+
 }

@@ -239,7 +239,7 @@ const GooglePoster = (() => {
     }
   }
   /**
-   * @param {string} accentColor  CSS hex color e.g. "#34A853"
+   * @param {string} accentColor 
    */
   function updateTheme(accentColor) {
     if (!accentColor) return;
@@ -315,5 +315,88 @@ const GooglePoster = (() => {
   };
 })();
 document.addEventListener("DOMContentLoaded", () => {
-    GooglePoster.renderPoster(GooglePoster.DEFAULT_DATA);
+
+    const savedData = localStorage.getItem("portfolioData");
+
+    if (savedData) {
+
+        GooglePoster.renderPoster(JSON.parse(savedData));
+
+    } else {
+
+        GooglePoster.renderPoster(GooglePoster.DEFAULT_DATA);
+
+    }
+
 });
+window.downloadPoster = async function () {
+
+    const poster = document.getElementById("gp-poster-root");
+
+    if (!poster) {
+        console.error("Poster not found");
+        return;
+    }
+    if (document.fonts) {
+        await document.fonts.ready;
+    }
+
+    const images = poster.querySelectorAll("img");
+
+    await Promise.all(
+        [...images].map(img => {
+            if (img.complete) return Promise.resolve();
+
+            return new Promise(resolve => {
+                img.onload = resolve;
+                img.onerror = resolve;
+            });
+        })
+    );
+    await new Promise(requestAnimationFrame);
+
+    console.log("Poster size:", poster.offsetWidth, poster.offsetHeight);
+
+    const stage = document.querySelector(".gp-stage");
+    const prevTransform = stage ? stage.style.transform : "";
+    if (stage) stage.style.transform = "none";
+
+    const fadeEls = poster.querySelectorAll(".gp-fade-in");
+    fadeEls.forEach(el => { el.style.animation = "none"; });
+
+    const imgs = poster.querySelectorAll(".gp-avatar");
+    const tempDivs = [];
+    imgs.forEach((img) => {
+        const div = document.createElement("div");
+        div.className = img.className; 
+        div.style.backgroundImage = `url("${img.src}")`;
+        div.style.backgroundSize = "cover";
+        div.style.backgroundPosition = "center";
+        
+        img.style.display = "none";
+        img.parentNode.insertBefore(div, img);
+        tempDivs.push({ img, div });
+    });
+
+    const canvas = await html2canvas(poster, {
+        scale: 3,
+        useCORS: true,
+        backgroundColor: "#ffffff",
+        logging: true
+    });
+
+    tempDivs.forEach(({ img, div }) => {
+        img.style.display = "";
+        div.parentNode.removeChild(div);
+    });
+
+    if (stage) stage.style.transform = prevTransform;
+    fadeEls.forEach(el => { el.style.animation = ""; });
+
+    console.log(canvas);
+
+    const link = document.createElement("a");
+    link.download = "Classic.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+};
