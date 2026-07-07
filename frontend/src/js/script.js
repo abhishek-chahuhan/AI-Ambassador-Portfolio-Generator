@@ -617,7 +617,7 @@ function initGenerateBtn() {
 
         try {
 
-            const response = await fetch("http://localhost:8080/api/enhance", {
+            const response = await fetch("https://ai-ambassador-backend.onrender.com/api/enhance", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -704,7 +704,7 @@ function initCaptionBtn() {
 
         try {
 
-            const response = await fetch("http://localhost:8080/api/caption", {
+            const response = await fetch("https://ai-ambassador-backend.onrender.com/api/caption", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
